@@ -1,35 +1,35 @@
 # ExpenseManager
 
-ExpenseManager ek multi-platform Flutter application hai jo personal finance ko track aur manage karna asaan banata hai. App Firebase ke upar build hai aur Android, iOS, Web, Windows, macOS, aur Linux par run kar sakta hai.
+ExpenseManager is a multi-platform Flutter application for tracking and managing personal finances. It is backed by Firebase services and runs on Android, iOS, Web, Windows, macOS, and Linux.
 
 ## Core Features
 
-- **Dashboard & Analytics**: Income, expense, aur net balance ka real-time overview.
+- **Dashboard & Analytics**: Real-time overview of income, expenses, and net balance.
 - **Transactions Management**:
-  - Income & expense entries category-wise add/edit/delete.
-  - Multi-currency support: original currency store + user preferred currency conversion.
-  - Detailed transaction slips (PDF) export & share.
+  - Add, edit, and delete income/expense entries with categories.
+  - Multi-currency support with original amounts and preferred currency conversions.
+  - Generate detailed transaction slips (PDF) for export and sharing.
 - **Loans Module**:
-  - Loans given/taken track karein, person-wise summary aur balance.
-  - Loan detail screens, pay reminders, aur quick settlement flows.
+  - Track loans given or taken with person-wise summaries and balances.
+  - Loan detail screens, payment reminders, and quick settlement flows.
 - **Payees & Transfers**:
-  - Saved recipients (account number + profile).
-  - In-app transfer workflow: expense/income double-entry, receipts & notifications.
+  - Save recipients with account profiles.
+  - In-app transfer workflow with double-entry accounting, receipts, and notifications.
 - **Statements & Exports**:
-  - Account statement (PDF) download with opening/closing balance.
-  - CSV/JSON exports for bookkeeping.
+  - Download account statements (PDF) showing opening and closing balances.
+  - Export data as CSV/JSON for bookkeeping.
 - **Notifications**:
-  - Firebase Cloud Messaging + local notifications for transfer alerts.
+  - Transfer alerts via Firebase Cloud Messaging and local notifications.
 - **Security**:
-  - Email/Password authentication.
-  - Optional biometric login helpers (platform support dependent).
+  - Email/password authentication.
+  - Optional biometric login helpers (where supported).
 
 ## Tech Stack
 
 - **Flutter** (Dart) with Material 3 UI.
 - **Firebase**: Authentication, Cloud Firestore, Cloud Functions, Cloud Messaging.
 - **Local storage**: Shared Preferences, Flutter Secure Storage (biometrics).
-- **CI/CD ready**: npm scripts for Firebase functions lint/build.
+- **CI/CD ready**: npm scripts for Firebase Cloud Functions linting/builds.
 
 ## Project Structure
 
@@ -49,8 +49,8 @@ android/ios/...    # Platform-specific runners & configs
 1. **Prerequisites**
    - Flutter SDK (latest stable)
    - Dart SDK (Flutter bundle)
-   - Firebase CLI (deployment ke liye)
-   - Node.js (Cloud Functions ke liye)
+   - Firebase CLI (for deployments)
+   - Node.js (for Cloud Functions)
 
 2. **Clone**
    ```bash
@@ -67,15 +67,15 @@ android/ios/...    # Platform-specific runners & configs
    ```
 
 4. **Firebase Configuration**
-   - FlutterFire CLI chalakar `lib/firebase_options.dart` generate karein.  
+   - Generate `lib/firebase_options.dart` using the FlutterFire CLI.  
      ```bash
      flutterfire configure
      ```
-   - Platform specific config files download karke place karein:
+   - Download platform-specific config files and place them in the project:
      - `android/app/google-services.json`
      - `ios/Runner/GoogleService-Info.plist`
-     - `macos/Runner/GoogleService-Info.plist` (agar macOS target hai)
-   - Email/Password auth enable karein, SHA-1 fingerprint add karein (Android), phir updated config files replace karein.
+     - `macos/Runner/GoogleService-Info.plist` (if targeting macOS)
+   - Enable Email/Password Authentication, add the Android SHA-1 fingerprint, then download the updated config files.
 
 5. **Run**
    ```bash
@@ -91,15 +91,15 @@ android/ios/...    # Platform-specific runners & configs
    firebase deploy --only functions
    ```
 
-> ❗️ `lib/firebase_options.dart`, `google-services.json`, aur `GoogleService-Info.plist` repo me include nahin hain. Ye files local rakhein aur `.gitignore` me already ignore hain.
+> ❗️ `lib/firebase_options.dart`, `google-services.json`, and `GoogleService-Info.plist` are not tracked in the repository. Keep them locally—`.gitignore` already covers these files.
 
 ## Environment Configuration
 
 | Variable/Step                  | Description                                                   |
 | ----------------------------- | ------------------------------------------------------------- |
-| Firebase Project              | `expensetracking-df9e8` (replace with apna project if needed) |
+| Firebase Project              | `expensetracking-df9e8` (replace with your project if needed) |
 | Auth Provider                 | Email/Password                                                |
-| Firestore Rules               | `/firestore.rules` ke according deploy karein                 |
+| Firestore Rules               | Deploy from `/firestore.rules`                               |
 | Functions Region              | Default (`us-central1`)                                       |
 | Currency API (built-in)       | exchangerate-api.com free endpoint (no key required)          |
 
@@ -114,7 +114,7 @@ firebase emulators:start       # Local emulation (auth, firestore)
 
 ## Known TODOs / Enhancements
 
-- In-app analytics charts (future).
+- In-app analytics charts.
 - Advanced budgeting alerts.
 - Offline sync improvements.
 
@@ -122,7 +122,7 @@ firebase emulators:start       # Local emulation (auth, firestore)
 
 - 📧 Email: [info@amaanullah.com](mailto:info@amaanullah.com)
 - 🌐 Website: [amaanullah.com](https://amaanullah.com)
-- Issues / feature requests: GitHub Issues tab par report karein.
+- Issues or feature requests: please use the GitHub Issues tab.
 
 ---
 
